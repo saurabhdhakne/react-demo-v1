@@ -6,42 +6,25 @@ import "bootstrap/dist/css/bootstrap.min.css"
 export default function MapCarousel() {
   const [activePointer, setActivePointer] = useState(0)
 
-  // Sample data for 5 locations
+  // Sample data for 3 locations
   const locations = [
     {
       id: 0,
-      title: "New York City",
-      description:
-        "The city that never sleeps, New York offers endless opportunities and experiences. From Broadway shows to world-class museums, Central Park to the Statue of Liberty, NYC is a melting pot of culture and innovation.",
+      title: "New York",
+      description: "The city that never sleeps with endless opportunities.",
       position: { top: "20%", left: "15%" },
     },
     {
       id: 1,
       title: "Los Angeles",
-      description:
-        "The entertainment capital of the world, LA is home to Hollywood, beautiful beaches, and perfect weather year-round. Experience the glamour of Beverly Hills and the creativity of Venice Beach.",
+      description: "Entertainment capital with beautiful beaches.",
       position: { top: "35%", left: "8%" },
     },
     {
       id: 2,
       title: "Chicago",
-      description:
-        "Known for its stunning architecture, deep-dish pizza, and vibrant music scene. The Windy City offers a perfect blend of Midwest charm and big-city sophistication along Lake Michigan.",
+      description: "Known for architecture and deep-dish pizza.",
       position: { top: "25%", left: "35%" },
-    },
-    {
-      id: 3,
-      title: "Miami",
-      description:
-        "A tropical paradise with pristine beaches, vibrant nightlife, and rich cultural diversity. Miami's Art Deco architecture and Latin influence create a unique and exciting atmosphere.",
-      position: { top: "70%", left: "45%" },
-    },
-    {
-      id: 4,
-      title: "Seattle",
-      description:
-        "The emerald city surrounded by water, mountains, and forests. Home to innovative tech companies, excellent coffee culture, and the iconic Space Needle overlooking Puget Sound.",
-      position: { top: "15%", left: "5%" },
     },
   ]
 
@@ -104,7 +87,7 @@ export default function MapCarousel() {
           style={{
             bottom: "40px",
             left: "40px",
-            width: "400px",
+            width: "300px",
             maxWidth: "90vw",
             zIndex: 20,
           }}
@@ -146,26 +129,10 @@ export default function MapCarousel() {
 
           {/* Content */}
           <div className="text-center">
-            <h4 className="mb-3 text-primary fw-bold">{locations[activePointer].title}</h4>
+            <h4 className="mb-3 text-primary">{locations[activePointer].title}</h4>
             <p className="text-muted mb-0" style={{ fontSize: "14px", lineHeight: "1.5" }}>
               {locations[activePointer].description}
             </p>
-          </div>
-
-          {/* Dots Indicator */}
-          <div className="d-flex justify-content-center mt-3 gap-2">
-            {locations.map((_, index) => (
-              <button
-                key={index}
-                className={`rounded-circle border-0 ${activePointer === index ? "bg-primary" : "bg-light"}`}
-                style={{
-                  width: "8px",
-                  height: "8px",
-                  transition: "all 0.3s ease",
-                }}
-                onClick={() => setActivePointer(index)}
-              ></button>
-            ))}
           </div>
         </div>
       </div>
