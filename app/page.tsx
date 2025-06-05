@@ -1,5 +1,11 @@
-import Component from "../interactive-map"
+"use client"
+
+import MapCarousel from "../map-carousel"
 
 export default function Page() {
-  return <Component />
+  return (
+    <main>
+      <MapCarousel />
+    </main>
+  )
 }
